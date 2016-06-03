@@ -45,4 +45,6 @@ install: travis_wait
 
 script:
   - ./build.sh
+  - ls -lh /home/travis/riscv_install/bin/              # temporary
+  - find /home/travis/riscv_install | grep gdb
   - make -C riscv-isa-sim/build check
