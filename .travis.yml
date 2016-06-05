@@ -44,6 +44,7 @@ before_install:
 install: travis_wait
 
 script:
+  - (cd riscv-gnu-toolchain && sed -i -e '/--disable-gdb/d' Makefile.in)
   - ./build.sh
   - ls -lh /home/travis/riscv_install/bin/              # temporary
   - find /home/travis/riscv_install | grep gdb
